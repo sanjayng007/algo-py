@@ -1,3 +1,13 @@
+"""
+    MERGE SORT:
+    
+    Stable
+    Θ(n·lg(n)) time
+    Not adaptive
+    Does not require random access to data
+"""
+# input must be comma seperated integers
+x = [int(i) for i in input().split(",") ]
 
 def merge(left,right):
     result = []
@@ -20,7 +30,6 @@ def merge_sort(arr):
     if(len(arr)<=1):
         return arr
     i = int(len(arr)/2)
-    print(i)
     left = arr[:i]
     right = arr[i:]
     left = merge_sort(left)
@@ -28,5 +37,4 @@ def merge_sort(arr):
 
     return merge(left,right)
 
-x = merge_sort([5,6,4,3,1])
-print(x)
+print(merge_sort(x))
